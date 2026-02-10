@@ -11,7 +11,7 @@ const SETTINGS_KEY = 'uld_settings';
 const ADMIN_SESSION_KEY = 'uld_admin_session';
 
 // --- KONFIGURASI GOOGLE (PENTING!) ---
-const GOOGLE_SCRIPT_URL = "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLjuSBjlxtB1jWADU44OzuQQehz08dc9aZvcjQjk9awhqNMQgbPcEBsT5nDK8DUK132w6AdtyQDY2P_UBAil6tuJk1r4rQnH4YKPuWZuzzi9Vz888fHt5vTQiTGKhewsWlJIO-zydPsDEsFzWIyPR-MmOJnej5pal0DnZ-BtPDX5Zom45EJKPZUhltRCZjRNdxYANxrldYMAeAZScQKdBFZeIQrt7NdY2Xv3dP0JK65kH0ToKHrPBMMYmAqPs-3HNsxc3IhEontFAyy2Y84Dzt1EH3Xtjg&lib=MDqeOt2VRc1RsDQvkO75tamAGFOlNCMp3";
+const GOOGLE_SCRIPT_URL = "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLhFzsCgzzExMYqYso1E_bbqi6a1UeSKvBwmy3Ztvdih3WZEF96uFOxIKH9DEX8TV3tL-2H-l8sFiWDoVzT6Wk_1xjbBWgshqD8uGfQKYKkLCa_bQNtNvufU6Og8k2PfpTS0owrfqVBNE4lBpgaekrtBQlaEapW0R0wSlsK88kndoIYw0Vdv_0I-eB-XWS9I1rcJypWJIZFynWGz18D4FNjukFMzBQjfA82EvviddjYCg2uE9MsomZ3sxSAXlGRsVF_-IKb9vQL9QFy0usmzkXVZvbMjcg&lib=MDqeOt2VRc1RsDQvkO75tamAGFOlNCMp3";
 
 const defaultSettings = {
     appName: "SELARAS",
@@ -424,6 +424,9 @@ function processSchoolUpload(input){
 window.onload = function() {
     console.log('🚀 Application loaded!');
     console.log('🔗 GOOGLE_SCRIPT_URL:', GOOGLE_SCRIPT_URL ? 'SET ✅' : 'NOT SET ❌');
+
+    // PENTING: Hide loading overlay saat pertama kali load
+    showLoading(false);
 
     // PENTING: Gunakan ID yang benar sesuai HTML
     const form = document.getElementById("consultationForm");
